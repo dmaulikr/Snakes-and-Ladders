@@ -8,22 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
+#import "Player.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
     
-        NSLog(@"Welcome to Snakes & Ladders\n");
-        NSLog(@"Game Commands:\n"
+        Player *player1 = [[Player alloc] init];
+        
+        NSLog(@"\nWelcome to Snakes & Ladders\n");
+        NSLog(@"\nGame Commands:\n"
               "roll - Roll dice\n");
         BOOL playGame = YES;
         do {
             NSString* inputString = [InputHandler obtainInput];
             
             if ([inputString isEqualToString:@"roll"]){
-                int dice = arc4random_uniform(6) + 1;
+                [player1 roll];
             }
             if ([inputString isEqualToString:@"quit"]){
-                NSLog(@"Game has ended");
+                NSLog(@"\nGame has ended");
                 playGame = NO;
             }
             

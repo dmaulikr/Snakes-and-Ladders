@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D12BBF411F07134D0077B11C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D12BBF401F07134D0077B11C /* main.m */; };
 		D12BBF491F07139C0077B11C /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D12BBF481F07139C0077B11C /* InputHandler.m */; };
+		D12BBF4C1F07158D0077B11C /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D12BBF4B1F07158D0077B11C /* Player.m */; };
+		D12BBF4F1F0718460077B11C /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = D12BBF4E1F0718460077B11C /* Board.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,10 @@
 		D12BBF401F07134D0077B11C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D12BBF471F07139C0077B11C /* InputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
 		D12BBF481F07139C0077B11C /* InputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
+		D12BBF4A1F07158D0077B11C /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		D12BBF4B1F07158D0077B11C /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		D12BBF4D1F0718460077B11C /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		D12BBF4E1F0718460077B11C /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				D12BBF401F07134D0077B11C /* main.m */,
+				D12BBF4A1F07158D0077B11C /* Player.h */,
+				D12BBF4B1F07158D0077B11C /* Player.m */,
+				D12BBF4D1F0718460077B11C /* Board.h */,
+				D12BBF4E1F0718460077B11C /* Board.m */,
 				D12BBF471F07139C0077B11C /* InputHandler.h */,
 				D12BBF481F07139C0077B11C /* InputHandler.m */,
 			);
@@ -125,6 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D12BBF411F07134D0077B11C /* main.m in Sources */,
+				D12BBF4C1F07158D0077B11C /* Player.m in Sources */,
+				D12BBF4F1F0718460077B11C /* Board.m in Sources */,
 				D12BBF491F07139C0077B11C /* InputHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
