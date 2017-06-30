@@ -19,7 +19,10 @@ int main(int argc, const char * argv[]) {
         do {
             NSString* inputString = [InputHandler obtainInput];
             
-            if ([inputString isEqualToString:"quit"]){
+            if ([inputString isEqualToString:@"roll"]){
+                int dice = arc4random_uniform(6) + 1;
+            }
+            if ([inputString isEqualToString:@"quit"]){
                 NSLog(@"Game has ended");
                 playGame = NO;
             }
