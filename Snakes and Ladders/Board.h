@@ -15,6 +15,6 @@
 @property (nonatomic, assign) NSInteger numberOfLadders;
 
 - (instancetype)initWithSnakes:(NSInteger)snakes andLadders:(NSInteger)ladders;
-- (void) regenerateBoard;
+- (void) generateBoard;
 
 @end

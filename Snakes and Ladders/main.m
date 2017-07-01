@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
 #import "Player.h"
+#import "Board.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
     
+        Board *board = [[Board alloc] init];
         Player *player1 = [[Player alloc] init];
         
         NSLog(@"\nWelcome to Snakes & Ladders\n");
@@ -20,12 +22,16 @@ int main(int argc, const char * argv[]) {
               "roll - Roll dice\n");
         BOOL playGame = YES;
         do {
-            NSString* inputString = [InputHandler obtainInput];
-            
+//            NSString* inputString = [InputHandler obtainInput];
+            NSString* inputString = @"roll";
+            sleep(0.5);
             if ([inputString isEqualToString:@"roll"]){
-                [player1 roll];
+                [player1 roll:board.boardLayout];
             }
-            if ([inputString isEqualToString:@"quit"]){
+            if ([inputString isEqualToString:@"reset"]){
+                [board generateBoard];
+            }
+            if ([inputString isEqualToString:@"quit"] || player1.currentSquare >= 100){
                 NSLog(@"\nGame has ended");
                 playGame = NO;
             }

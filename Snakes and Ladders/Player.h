@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Board.h"
+
 
 @interface Player : NSObject
 
 @property (nonatomic, assign) NSInteger currentSquare;
+@property (nonatomic, assign) BOOL gameOver;
 
-- (void) roll;
+- (void) roll:(NSDictionary*)board;
+- (void) output:(NSDictionary*)board rolled:(int)dice;
 
 @end
