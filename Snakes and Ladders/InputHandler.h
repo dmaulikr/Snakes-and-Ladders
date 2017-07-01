@@ -13,5 +13,6 @@
 @property NSString* cleanString;
 
 + (NSString *) obtainInput;
++ (NSUInteger)obtainNumberInput;
 
 @end

@@ -12,6 +12,7 @@
 
 @interface Player : NSObject
 
+@property (nonatomic, strong) NSString* name;
 @property (nonatomic, assign) NSInteger currentSquare;
 @property (nonatomic, assign) BOOL gameOver;
 

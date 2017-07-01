@@ -11,6 +11,7 @@
 		D12BBF491F07139C0077B11C /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D12BBF481F07139C0077B11C /* InputHandler.m */; };
 		D12BBF4C1F07158D0077B11C /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D12BBF4B1F07158D0077B11C /* Player.m */; };
 		D12BBF4F1F0718460077B11C /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = D12BBF4E1F0718460077B11C /* Board.m */; };
+		D12BBF521F0746CE0077B11C /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D12BBF511F0746CE0077B11C /* PlayerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		D12BBF4B1F07158D0077B11C /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		D12BBF4D1F0718460077B11C /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		D12BBF4E1F0718460077B11C /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		D12BBF501F0746CE0077B11C /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
+		D12BBF511F0746CE0077B11C /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				D12BBF4B1F07158D0077B11C /* Player.m */,
 				D12BBF4D1F0718460077B11C /* Board.h */,
 				D12BBF4E1F0718460077B11C /* Board.m */,
+				D12BBF501F0746CE0077B11C /* PlayerManager.h */,
+				D12BBF511F0746CE0077B11C /* PlayerManager.m */,
 				D12BBF471F07139C0077B11C /* InputHandler.h */,
 				D12BBF481F07139C0077B11C /* InputHandler.m */,
 			);
@@ -134,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D12BBF521F0746CE0077B11C /* PlayerManager.m in Sources */,
 				D12BBF411F07134D0077B11C /* main.m in Sources */,
 				D12BBF4C1F07158D0077B11C /* Player.m in Sources */,
 				D12BBF4F1F0718460077B11C /* Board.m in Sources */,
