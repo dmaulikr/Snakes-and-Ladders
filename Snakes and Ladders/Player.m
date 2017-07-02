@@ -20,29 +20,33 @@
     return self;
 }
 
-- (void) roll:(NSDictionary*)board {
+- (void) roll:(NSDictionary*)board{
     int dice = arc4random_uniform(6) + 1;
-    NSLog(@"\nYou have rolled %i", dice);
-    [self output:board rolled:dice];
-}
-
-- (void)output:(NSDictionary *)board rolled:(int)dice{
-
+    NSLog(@"\n%@ have rolled %i", self.name, dice);
     NSInteger newSquare = self.currentSquare + dice;
     if ([board objectForKey:@(newSquare)]){
         if (self.currentSquare < [board[@(newSquare)] integerValue]){
-            NSLog(@"Stairway to heaven!");
+            NSLog(@"Stairway to heaven! Player jumped from %li to %li",
+                  self.currentSquare,
+                  [board[@(newSquare)] integerValue]);
         } else {
-            NSLog(@"You got snaked!");
+            NSLog(@"You got snaked! Player dropped from %li to %li",
+                  self.currentSquare,
+                  [board[@(newSquare)] integerValue]);
         }
         self.currentSquare = [board[@(newSquare)] integerValue];
     } else {
         self.currentSquare+= dice;
     }
+}
+
+- (void)output{
     if (self.currentSquare >= 100){
+        self.currentSquare = 100;
+        self.gameOver = YES;
         NSLog(@"Congratulations!\nYou reached the end of the game!");
     } else {
-        NSLog(@"You are now at %li", self.currentSquare);
+        NSLog(@"You landed on %li", self.currentSquare);
     }
 }
 

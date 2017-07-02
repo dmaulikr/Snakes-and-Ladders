@@ -72,10 +72,10 @@
 				D12BBF401F07134D0077B11C /* main.m */,
 				D12BBF4A1F07158D0077B11C /* Player.h */,
 				D12BBF4B1F07158D0077B11C /* Player.m */,
-				D12BBF4D1F0718460077B11C /* Board.h */,
-				D12BBF4E1F0718460077B11C /* Board.m */,
 				D12BBF501F0746CE0077B11C /* PlayerManager.h */,
 				D12BBF511F0746CE0077B11C /* PlayerManager.m */,
+				D12BBF4D1F0718460077B11C /* Board.h */,
+				D12BBF4E1F0718460077B11C /* Board.m */,
 				D12BBF471F07139C0077B11C /* InputHandler.h */,
 				D12BBF481F07139C0077B11C /* InputHandler.m */,
 			);
@@ -272,6 +272,7 @@
 				D12BBF461F07134D0077B11C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

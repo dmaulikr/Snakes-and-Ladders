@@ -17,6 +17,6 @@
 @property (nonatomic, assign) BOOL gameOver;
 
 - (void) roll:(NSDictionary*)board;
-- (void) output:(NSDictionary*)board rolled:(int)dice;
+- (void) output;
 
 @end

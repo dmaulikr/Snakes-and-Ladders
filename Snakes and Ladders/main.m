@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
-#import "Player.h"
 #import "Board.h"
 #import "PlayerManager.h"
 
@@ -18,31 +17,34 @@ int main(int argc, const char * argv[]) {
         Board *board = [[Board alloc] init];
         PlayerManager *playerManager = [[PlayerManager alloc] init];
        
-        NSLog(@"Please input number of players:");
+        NSLog(@"Please input number of players(Max 8):");
         NSInteger numberOfPlayers = [InputHandler obtainNumberInput];
         do {
             if (!numberOfPlayers) {
                 NSLog(@"Unable to play without players.");
-                NSLog(@"Please input number of players:");
+                NSLog(@"Please input number of players(Max 8):");
                 numberOfPlayers = [InputHandler obtainNumberInput];
             }
         }while(!numberOfPlayers);
         [playerManager createPlayers:numberOfPlayers];
+        
+//        NSLog(@"%@", playerManager.players);
         NSLog(@"\nWelcome to Snakes & Ladders\n");
         NSLog(@"\nGame Commands:\n"
               "roll - Roll dice\n");
         BOOL playGame = YES;
+        
         do {
-//            NSString* inputString = [InputHandler obtainInput];
-            NSString* inputString = @"roll";
-            sleep(0.5);
-            if ([inputString isEqualToString:@"roll"]){
+            NSString* inputString = [InputHandler obtainInput];
+            if ([inputString isEqualToString:@"roll"] || [inputString isEqualToString:@"r"]){
+                [playerManager roll:board];
+                playGame = [playerManager score];
 //                [player1 roll:board.boardLayout];
             }
             if ([inputString isEqualToString:@"reset"]){
                 [board generateBoard];
             }
-            if ([inputString isEqualToString:@"quit"]){ //|| player1.currentSquare >= 100){
+            if ([inputString isEqualToString:@"quit"]){
                 NSLog(@"\nGame has ended");
                 playGame = NO;
             }

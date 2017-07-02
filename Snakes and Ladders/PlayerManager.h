@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Player.h"
 
+@class Player;
+@class Board;
 @interface PlayerManager : NSObject
 
 @property (nonatomic, strong) NSMutableArray* players;
+@property (nonatomic, assign) NSUInteger currentIndex;
 
 - (void) createPlayers:(NSInteger)numberOfPlayers;
+- (Player*) currentPlayer;
+- (void) roll:(Board*)board;
+- (void) output;
+- (BOOL) score;
 
 @end
