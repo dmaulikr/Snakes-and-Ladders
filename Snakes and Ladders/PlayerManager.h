@@ -18,9 +18,9 @@
 - (void) createPlayers:(NSInteger)numberOfPlayers;
 - (Player*) currentPlayer;
 - (void) playerTurn;
+- (void) leaveGame;
 - (void) roll:(Board*)board;
 - (void) output;
 - (BOOL) score;
-- (void) reset;
 
 @end

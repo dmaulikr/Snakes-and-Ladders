@@ -33,7 +33,10 @@ int main(int argc, const char * argv[]) {
             //        NSLog(@"%@", playerManager.players);
             NSLog(@"\nWelcome to Snakes & Ladders\n");
             NSLog(@"\nGame Commands:\n"
-                  "roll - Roll dice\n");
+                  "roll - Roll dice\n"
+                  "leave - You leave but game continues\n"
+                  "reset - Resets the game\n"
+                  "quit - Ends the game");
             BOOL playGame = YES;
             do {
                 [playerManager playerTurn];
@@ -43,15 +46,28 @@ int main(int argc, const char * argv[]) {
                     resetGame = [playerManager score];
                     //                [player1 roll:board.boardLayout];
                 }
+                if ([inputString isEqualToString:@"leave"]){
+                    [playerManager leaveGame];
+                }
                 if ([inputString isEqualToString:@"reset"] || resetGame){
                     [playerManager.players removeAllObjects];
-                    [playerManager createPlayers:numberOfPlayers];
                     [board generateBoard];
+                    playGame = NO;
+                    NSLog(@"Game is being reset.");
+                    continue;
                 }
                 if ([inputString isEqualToString:@"quit"]){
-                    NSLog(@"\nGame has ended.");
-                    NSLog(@"\nThanks for playing.");
-                    playGame = NO;
+                    NSLog(@"Would you like to ""reset"" or ""quit""?");
+                    inputString = [InputHandler obtainInputLowercase];
+                    if ([inputString isEqualToString:@"reset"]){
+                        [playerManager.players removeAllObjects];
+                        [board generateBoard];
+                        playGame = NO; resetGame = YES;
+                    } else if ([inputString isEqualToString:@"quit"]){
+                        NSLog(@"\nGame has ended.");
+                        NSLog(@"\nThanks for playing.");
+                        playGame = NO;
+                    }
                 }
                 
             }while(playGame);

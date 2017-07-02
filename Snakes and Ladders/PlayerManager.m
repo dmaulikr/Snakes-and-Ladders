@@ -71,16 +71,21 @@
 - (Player*) currentPlayer{
     NSUInteger playerTurn = self.currentIndex % self.players.count;
     //Game feature to continue playing after someone won
-//    while([self.players[playerTurn] gameOver]){
-//        self.currentIndex += 1;
-//        playerTurn = self.currentIndex % self.players.count;
-//    }
+    while([self.players[playerTurn] gameOver]){
+        self.currentIndex += 1;
+        playerTurn = self.currentIndex % self.players.count;
+    }
 //    NSLog(@"%@'s Turn.", [self.players[playerTurn] name]);
     return self.players[playerTurn];
 }
 
 - (void) playerTurn{
     NSLog(@"%@'s turn.", [[self currentPlayer] name]);
+}
+
+- (void) leaveGame{
+    Player *currentPlayer = [self currentPlayer];
+    [currentPlayer setGameOver:YES];
 }
 
 - (void) roll:(Board*)board{

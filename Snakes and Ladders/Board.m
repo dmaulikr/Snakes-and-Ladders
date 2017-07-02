@@ -16,7 +16,7 @@
 
 - (instancetype)init
 {
-    self = [self initWithSnakes:12 andLadders:18];
+    self = [self initWithSnakes:10 andLadders:15];
     return self;
 }
 
