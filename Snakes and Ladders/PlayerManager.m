@@ -79,6 +79,10 @@
     return self.players[playerTurn];
 }
 
+- (void) playerTurn{
+    NSLog(@"%@'s turn.", [[self currentPlayer] name]);
+}
+
 - (void) roll:(Board*)board{
 //    [player roll]
     Player *currentPlayer = [self currentPlayer];
@@ -94,17 +98,18 @@
 
 - (BOOL) score{
     NSMutableString *allScores = [[NSMutableString alloc] initWithString:@"score: "];
-    BOOL playGame = YES;
+    BOOL resetGame = NO;
     for (int i =0; i < self.players.count; i++){
         Player *currentPlayer = self.players[i];
         [allScores appendString:[NSString stringWithFormat:@"%@: %li ", currentPlayer.name, currentPlayer.currentSquare]];
         if (currentPlayer.gameOver){
-            playGame = NO;
+            resetGame = YES;
         }
     }
     NSLog(@"%@", allScores);
-    return playGame;
+    return resetGame;
 }
+
 
 //Lazy Initialization
 - (NSMutableArray*) players {
