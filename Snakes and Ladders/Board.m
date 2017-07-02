@@ -28,13 +28,14 @@
         _numberOfLadders = ladders;
         randomBoard = [[NSMutableDictionary alloc] init];
         allSquares = [[NSMutableArray alloc] init];
-        for (int i = 2; i < 100; i++){[allSquares addObject:@(i)];} //Array of tile 2 to 98
         [self generateBoard];
     }
     return self;
 }
 
 - (void) generateBoard{
+    [allSquares removeAllObjects];
+    for (int i = 2; i < 100; i++){[allSquares addObject:@(i)];} //Array of tile 2 to 98
     //Generate ladders
     for (int i = 0; i < self.numberOfLadders; i++){
         int rand1 = arc4random_uniform((int)allSquares.count);

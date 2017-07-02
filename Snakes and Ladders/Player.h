@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, assign) NSInteger currentSquare;
 @property (nonatomic, assign) BOOL gameOver;
+@property (nonatomic, assign) BOOL leftGame;
 
 - (void) roll:(NSDictionary*)board;
 - (void) output;

@@ -16,6 +16,7 @@
     if (self) {
         _currentSquare = 0;
         _gameOver = NO;
+        _leftGame = NO;
     }
     return self;
 }

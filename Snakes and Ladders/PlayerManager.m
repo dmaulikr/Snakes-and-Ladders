@@ -71,7 +71,7 @@
 - (Player*) currentPlayer{
     NSUInteger playerTurn = self.currentIndex % self.players.count;
     //Game feature to continue playing after someone won
-    while([self.players[playerTurn] gameOver]){
+    while([self.players[playerTurn] leftGame]){
         self.currentIndex += 1;
         playerTurn = self.currentIndex % self.players.count;
     }
@@ -85,7 +85,8 @@
 
 - (void) leaveGame{
     Player *currentPlayer = [self currentPlayer];
-    [currentPlayer setGameOver:YES];
+    [currentPlayer setLeftGame:YES];
+//    self.currentIndex += 1;
 }
 
 - (void) roll:(Board*)board{
