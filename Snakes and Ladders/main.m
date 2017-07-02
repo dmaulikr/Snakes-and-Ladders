@@ -35,17 +35,19 @@ int main(int argc, const char * argv[]) {
         BOOL playGame = YES;
         
         do {
-            NSString* inputString = [InputHandler obtainInput];
+            NSString* inputString = [InputHandler obtainInputLowercase];
             if ([inputString isEqualToString:@"roll"] || [inputString isEqualToString:@"r"]){
                 [playerManager roll:board];
                 playGame = [playerManager score];
 //                [player1 roll:board.boardLayout];
             }
             if ([inputString isEqualToString:@"reset"]){
+                [playerManager.players removeAllObjects];
                 [board generateBoard];
             }
             if ([inputString isEqualToString:@"quit"]){
-                NSLog(@"\nGame has ended");
+                NSLog(@"\nGame has ended.");
+                NSLog(@"\nThanks for playing.");
                 playGame = NO;
             }
             

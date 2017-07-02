@@ -13,6 +13,7 @@
 @property NSString* cleanString;
 
 + (NSString *) obtainInput;
++ (NSString *) obtainInputLowercase;
 + (NSInteger)obtainNumberInput;
 
 @end

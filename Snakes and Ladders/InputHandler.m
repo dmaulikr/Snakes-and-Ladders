@@ -33,6 +33,15 @@
     return [inputString stringByTrimmingCharactersInSet:newLineChar];
 }
 
++ (NSString *)obtainInputLowercase {
+    char inputChar[255];
+    
+    fgets(inputChar, 255, stdin);
+    NSString *inputString = [NSString stringWithCString:inputChar encoding:NSUTF8StringEncoding];
+    NSCharacterSet *newLineChar = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    return [[inputString stringByTrimmingCharactersInSet:newLineChar] lowercaseString];
+}
+
 + (NSInteger)obtainNumberInput {
     char inputChar[255];
     
